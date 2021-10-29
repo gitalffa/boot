@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="index1.css">
+    <link rel="stylesheet" href="index.css">
     <title>alffaGayala</title>
   </head>
   <body data-bs-spy="scroll" data-bs-target="#navbar" data-offset="86">
 
     <!-- Inicio Header -->
-    <nav id="header" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav id="header" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top ">
         <div class="container">
             
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="index.html">
                     <img src="assets/images/alffa-logo.png" alt="Platzi Logo">
                     Proyecto Jubilatorio
                 </a>
@@ -25,13 +25,10 @@
                 <div class="collapse navbar-collapse" id="navbar">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link"  href="#main">Las Rutas</a>
+                            <a class="nav-link" href="#quien-soy">Quien soy </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#speakers">Los ¨Participantes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#place-time">Próximo lugar y fecha</a>
+                            <a class="nav-link" href="#ultimas-rodadas">Ultimas rodadas</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#conviertete-en-orador">Conviertete en Gayala</a>
@@ -49,8 +46,8 @@
     <!-- Fin Header -->
 
     <!-- carrusel inicio -->
-    <section id="main">
-        <div id="carousel" class="carousel slide" data-bs-ride="carousel" data-bs-pause=“false”>
+    <section id="main" class="h-100">
+        <div id="carousel" class="carousel slide " data-bs-ride="carousel" data-bs-pause=“false”>
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="assets/images/fabriyyo.jpg" class="d-block w-100" alt="hawaii 1">
@@ -73,13 +70,12 @@
                     <div class="row align-items-center">
                         <div class="col-md-6 offset-md-6 text-center text-md-end">
                             <h1>alffa Gayala</h1>
-                            <p class="d-none d-sm-block">@alffa Gayala es mi proyecto personal Post-Jubilatorio donde plasmaré mis andanzas y demás peripecias de éste futuro viejito viajero. Además iré incrementando secciones donde describan las tecnologías utilizadas para hacer desde cero este espacio cibernético 
+                            <p class="d-none d-sm-block" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">@alffa Gayala es mi proyecto personal Post-Jubilatorio donde plasmaré mis andanzas y demás peripecias de éste futuro viejito viajero. Además iré incrementando secciones donde describan las tecnologías utilizadas para hacer desde cero este espacio cibernético 
                             </p>
-                            <a href="#conviertete-en-orador" class="btn btn-outline-light">Quiero ser Gayala</a>
-                            <button type="button" class="btn btn-platzi" data-bs-toggle="modal" data-bs-target="#exampleModal">Quiero comprar camisetas</button>
+                            <!-- <a href="#conviertete-en-orador" class="btn btn-outline-light">Quiero ser Gayala</a>
+                            <button type="button" class="btn btn-platzi" data-bs-toggle="modal" data-bs-target="#exampleModal">Quiero comprar camisetas</button> -->
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -121,94 +117,44 @@
       </div>
     <!-- modal fin -->
     <!-- speakers -->
-    <section id="speakers" class="mt-4">
+    <section id="quien-soy" class="mt-4">
         <div class="container">
-            <div class="row">
-                <div class="row">
-                    <div class="col text-center text-uppercase">
-                        <small>Conoce a los</small>
-                        <h2>Participantes</h2>
+            <div class="card mb-3" style="max-width: 100%;">
+                <div class="row g-0">
+                  <div class="col-md-6">
+                    <img src="assets/images/playa.jpg" class="img-fluid rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card-body">
+                      <h5 class="card-title">Quien soy</h5>
+                      <p class="card-text">Mi nombre es Fabricio y soy orgullosamente jubilado de la paraestatal <abbr title="Comisión Federal de Electricidad." data-bs-toggle="tooltip">CFE​</abbr>, Laboré en esta institución por 30 años.
+                                            Ahora que tengo el tiempo para disfrutar mi pasión, <strong>La moto</strong>, he decidido crear este espacio cibernético para combinarlo con algo que más o menos se hacer, El dasarrollo de código 
+                                           para la WEB normalmente escrito en <strong>PHP</strong> y <strong>Bootstrap</strong>.<br>La idea es ir creando conternido audiovisual</p> 
+                      <p class="card-text"><small class="text-muted">Última actualizacion 29-oct-2021</small></p>
                     </div>
+                  </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-6 col-xl-4 mb-4">
-                        <div class="card">
-                            <img src="assets/speakers/alfredo.jpg"  alt="foto de Alfredo">
-                            <div class="card-body">
-                                <div class="badges">
-                                  <span class="badge bg-warning text-dark">
-                                      Redes
-                                  </span>
-                                  <span class="badge bg-info text-dark">
-                                      Java Script
-                                  </span>
-                                </div>
-                              <h5 class="card-title">Alfredo Gayala</h5>
-                              <p class="card-text">Nunc lacinia magna enim, auctor porttitor mauris rhoncus non. Ut pharetra nisi ut lacus tristique sagittis. Nam pulvinar maximus tempus. Quisque elit dui, imperdiet vel bibendum at, aliquet sit amet mi. Integer pretium, sem non consectetur facilisis, eros est vulputate metus, eu volutpat eros neque ut lectus. Aliquam egestas lacus tortor, vel venenatis elit tempus quis. Sed nulla tellus, gravida ut tristique id, porta ac eros. Nunc ac elit erat.</p>
-                              <a href="#" class="btn btn-platzi">Conocelo más</a>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col-md-6 col-xl-4 mb-4">
-                        <div class="card">
-                            <img src="assets/speakers/fabrizio.jpg"  alt="foto de Fabri">
-                            <div class="card-body">
-                                <div class="badges">
-                                    <span class="badge bg-primary">
-                                        Html
-                                    </span>
-                                    <span class="badge bg-secondary">
-                                        PHP
-                                    </span>
-                                </div>
-                              <h5 class="card-title mb-0">Fabrizio Gayala</h5>
-                              <p class="card-text">Nunc lacinia magna enim, auctor porttitor mauris rhoncus non. Ut pharetra nisi ut lacus tristique sagittis. Nam pulvinar maximus tempus. Quisque elit dui, imperdiet vel bibendum at, aliquet sit amet mi. Integer pretium, sem non consectetur facilisis, eros est vulputate metus, eu volutpat eros neque ut lectus. Aliquam egestas lacus tortor, vel venenatis elit tempus quis. Sed nulla tellus, gravida ut tristique id, porta ac eros. Nunc ac elit erat.</p>
-                              <a href="#" class="btn btn-platzi">Conocelo más</a>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col-md-6 col-xl-4 mb-4">
-                        <div class="card">
-                            <img src="assets/speakers/fabricio.JPG"  alt="Foto Fabricio">
-                            <div class="card-body">
-                                <div class="badges">
-                                    <span class="badge bg-primary">
-                                        Html
-                                    </span>
-                                    <span class="badge bg-success">
-                                        Bootstrap
-                                    </span>
-                                    <span class="badge bg-secondary">
-                                        PHP
-                                    </span>
-                                </div>
-                              <h5 class="card-title mb-0">Fabricio Galindo</h5>
-                              <p class="card-text">Nunc lacinia magna enim, auctor porttitor mauris rhoncus non. Ut pharetra nisi ut lacus tristique sagittis. Nam pulvinar maximus tempus. Quisque elit dui, imperdiet vel bibendum at, aliquet sit amet mi. Integer pretium, sem non consectetur facilisis, eros est vulputate metus, eu volutpat eros neque ut lectus. Aliquam egestas lacus tortor, vel venenatis elit tempus quis. Sed nulla tellus, gravida ut tristique id, porta ac eros. Nunc ac elit erat.</p>
-                              <a href="#" class="btn btn-platzi">Conocelo más</a>
-                            </div>
-                          </div>
-                    </div>
-                    
-                </div>
-            </div>
+              </div>
         </div>
     </section>
     
     <!-- fin speakers -->
 <!-- lugar y fecha -->
 
-<section id="place-time">
+<section id="ultimas-rodadas">
     <div class="container-fluid">
         <div class="row">
              <div class="col-12 col-lg-6 pe-0 ps-0">
-                <img src="assets/images/honolulu.jpg" alt="honolulu">
+                <img src="assets/images/mecatan.jpg" alt="honolulu">
              </div>
              <div class="col-12 col-lg-6 pt-2 pb-4 pt-4">
-                 <h2>Honolulu - Octubre 2025</h2>
-                 <p><abbr title="En hawaiano, significa bahía resguardada o lugar de resguardo." data-bs-toggle="tooltip">Honolulu​</abbr> es la capital y localidad más grande del estado de Hawái, en los Estados Unidos.Honolulu es la más sureña de entre las principales ciudades estadounidenses. Aunque el nombre de Honolulu se refiere al área urbana en la costa sureste de la isla de Oahu, la ciudad y el condado de Honolulu han formado una ciudad-condado consolidada que cubre toda la isla (aproximadamente 600 km² de superficie).
-
-                    Se dice que antiguamente se llamaba Kou, el nombre de un distrito que abarca aproximadamente el área desde Nuuanu Avenue a Alakea Street y de Hotel Street a Queen Street, y que es el corazón del actual distrito del centro.3​Otros lugares de Oahu con renombre internacional son Waikiki, Pearl Harbor y Diamond Head. Según el censo del 1 de julio de 2004, las estimaciones de población de Honolulu eran de 377 260 habs. y para el condado completo, de 900,000. Aquí en 1961 nació Barack Obama, presidente de los Estados Unidos entre 2009 y 2017.</p>
-                    <a href="https://es.wikipedia.org/wiki/Honolulu" class="btn btn-outline-light" >Conoce más</a>
+                 <h2>Mecatán - Octubre 2021</h2>
+                 <p><abbr title="Se localiza en el Municipio San Blas del Estado de Nayarit México" data-bs-toggle="tooltip">Mecatán</abbr> El Mamey es prácticamente un rincón escondido de Nayarit, ideal para toda la familia y amigos, en el municipio de San Blas, muy cerca del poblado de Mecatán.
+                    Consiste en una serie de piletas y un arroyo de aguas de alto contenido mineral, el cual le da tonalidades de azul y gris a sus corrientes. Cuenta con diferentes secciones: al principio están unas piletas de baja profundidad, en las que se puede caminar para llegar a unas pequeñas cascadas que dan a unos manantiales de mayor profundidad.
+                    El lugar ofrece una pequeña tienda en la que se ofrecen bebidas y diferentes snacks para pasar la tarde.
+                    El Mamey está integrado por varias piletas, las cuales se pueden disfrutar por una módica cuota de acceso para el cuidado del lugar. Los propios pobladores promueven la cultura del cuidado a la naturaleza e invitan a dejar el lugar más limpio de como lo encuentra el visitante.
+                    Para llegar a este destino la vía más rápida es por la nueva autopista Tepic-San Blas, donde se recorren aproximadamente 20 kilómetros hasta llegar a la desviación de Mecatán. En este poblado se pueden encontrar a la venta plátanos, café, aguacate, mango y diversas frutas que abundan en la región.</p>
+                    <a href="http://www.nuestro-mexico.com/Nayarit/San-Blas/Mecatan/" class="btn btn-outline-light" >Conoce más</a>
             </div>
         </div>
     </div>
