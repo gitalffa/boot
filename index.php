@@ -15,7 +15,11 @@ $rodada =[
         'tituloabbr' => 'El cajón'
     ],
     [
-        'titulo' => 'San Blas',
+        'titulo' => 'San Blas 26 - Octubre - 2021',
+        'conocemas' => 'https://www.google.com/search?q=presael+cajon&oq=presael+cajon&aqs=chrome..69i57j0i13l6j0i22i30l3.3194j0j15&sourceid=chrome&ie=UTF-8',
+        'imagen' => 'assets/images/elcajon.jpg',
+        'abbr' => 'más formalmente llamada Presa Leonardo Rodríguez Alcaine',
+        'tituloabbr' => 'El cajón'
     ],
     [
         'titulo' => 'La curva',
