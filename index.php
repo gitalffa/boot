@@ -1,31 +1,12 @@
 <?php
-$rodada =[
-    [
-        'titulo' => 'Mecatán 12 - Octubre - 2021 ',
-        'conocemas' => 'https://www.google.com/search?q=mecat%C3%A1n&oq=mecat%C3%A1n&aqs=chrome..69i57j46i512j0i512j69i60l3.7017j0j7&sourceid=chrome&ie=UTF-8',
-        'imagen' => 'assets/images/mecatan.jpg',
-        'abbr' => 'Se localiza en el Municipio San Blas del Estado de Nayarit México',
-        'tituloabbr' => 'Mecatán'
-    ],
-    [
-        'titulo' => 'El Cajón 19 - Octubre - 2021',
-        'conocemas' => 'https://www.google.com/search?q=presael+cajon&oq=presael+cajon&aqs=chrome..69i57j0i13l6j0i22i30l3.3194j0j15&sourceid=chrome&ie=UTF-8',
-        'imagen' => 'assets/images/elcajon.jpg',
-        'abbr' => 'más formalmente llamada Presa Leonardo Rodríguez Alcaine',
-        'tituloabbr' => 'El cajón'
-    ],
-    [
-        'titulo' => 'San Blas 26 - Octubre - 2021',
-        'conocemas' => 'https://www.google.com/search?q=presael+cajon&oq=presael+cajon&aqs=chrome..69i57j0i13l6j0i22i30l3.3194j0j15&sourceid=chrome&ie=UTF-8',
-        'imagen' => 'assets/images/elcajon.jpg',
-        'abbr' => 'más formalmente llamada Presa Leonardo Rodríguez Alcaine',
-        'tituloabbr' => 'El cajón'
-    ],
-    [
-        'titulo' => 'La curva',
-    ]
-       
-];
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+$limitMonths = 3;
+require_once('rodadas.php');
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -99,8 +80,9 @@ $rodada =[
             </div>
             <div class="overlay carousel-caption ">
                 <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col text-center ">
+                    <div class="row align-items-end">
+                        <div class="col-6 offset-3 col-md-12 offset-md-0 text-center ">
+                            <!-- <img src="assets/images/AMIGOS DE LA CARRETERA @alffatransp.png" class="img-fluid rounded-start" alt="..." width="500" height="600"> -->
                             <h1><strong style="color: #97c93e;">@</strong>lffaGayala</h1>
                             <!-- <p class="d-none d-sm-block" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: larger;">@alffa Gayala es mi proyecto personal Post-Jubilatorio donde plasmaré mis andanzas y demás peripecias de éste futuro viejito viajero. Además iré incrementando secciones donde describan las tecnologías utilizadas para hacer desde cero este espacio cibernético 
                             </p> -->
@@ -177,30 +159,16 @@ $rodada =[
 
 <section id="ultimas-rodadas">
     <div class="container-fluid">
-        <div class="row">
-             <div class="col-12 col-lg-6 pe-0 ps-0">
-                <img src="<?php echo $rodada[0]['imagen'] ?>" alt="<?php echo $rodada[0] ?>">
-             </div>
-             <div class="col-12 col-lg-6 pt-2 pb-4 pt-4">
-                 <h2><?php echo $rodada[0]['titulo']; ?></h2>
-                 <p><abbr title="<?php echo $rodada[0]['abbr'] ?>" data-bs-toggle="tooltip"><?php echo $rodada[0]['tituloabbr'] ?></abbr> El Mamey es prácticamente un rincón escondido de Nayarit, ideal para toda la familia y amigos, en el municipio de San Blas, muy cerca del poblado de Mecatán.
-                    Consiste en una serie de piletas y un arroyo de aguas de alto contenido mineral, el cual le da tonalidades de azul y gris a sus corrientes. Cuenta con diferentes secciones: al principio están unas piletas de baja profundidad, en las que se puede caminar para llegar a unas pequeñas cascadas que dan a unos manantiales de mayor profundidad.
-                    El lugar ofrece una pequeña tienda en la que se ofrecen bebidas y diferentes snacks para pasar la tarde.</p>
-                    <a href="<?php echo $rodada[0][conocemas]; ?>" target="_blank" class="btn btn-outline-light" >Conoce más</a>
-            </div>
-        </div>
-        <div class="row">
-             <div class="col-12 col-lg-6 pe-0 ps-0">
-                <img src="<?php echo $rodada[1]['imagen'] ?>" alt="<?php echo $rodada[0] ?>">
-             </div>
-             <div class="col-12 col-lg-6 pt-2 pb-4 pt-4">
-                 <h2><?php echo $rodada[1]['titulo']; ?></h2>
-                 <p><abbr title="<?php echo $rodada[1]['abbr'] ?>" data-bs-toggle="tooltip"><?php echo $rodada[1]['tituloabbr'] ?></abbr> La Presa El Cajón, más formalmente llamada Presa Leonardo Rodríguez Alcaine, es una central hidroeléctrica ubicada
-                  en el cauce del Río Grande de Santiago en el municipio de Santa María del Oro, Nayarit. Inició operaciones el 1 de marzo de 2007. Tiene la capacidad de generar 750 megawatts de energía eléctrica. Mide 640 m de largo y 178 m de alto; su 
-                  embalse tiene la capacidad de albergar 2,282 hectómetros cúbicos de agua.​ Tuvo un costo aproximado de 800 millones de dólares. La presa es operada por la Comisión Federal de Electricidad.</p>
-                    <a href="<?php echo $rodada[1][conocemas]; ?>" target="_blank" class="btn btn-outline-light" >Conoce más</a>
-            </div>
-        </div>
+        <?php
+        $totalMonths = 0;
+        for ($idx=0;$idx<count($rodadas);$idx++){
+            $totalMonths += $rodadas[$idx]->months;
+            if($totalMonths>$limitMonths){
+                break;
+            }
+            printRodada($rodadas[$idx]);
+        };
+        ?>
     </div>
 </section>
 
