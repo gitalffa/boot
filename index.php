@@ -38,7 +38,7 @@ $rodada =[
     <link rel="stylesheet" href="index.css">
     <title>alffaGayala</title>
   </head>
-  <body data-bs-spy="scroll" data-bs-target="#navbar" data-offset="86">
+  <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="50">
 
     <!-- Inicio Header -->
     <nav id="header" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top ">
@@ -60,7 +60,10 @@ $rodada =[
                             <a class="nav-link" href="#ultimas-rodadas">Ultimas rodadas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#conviertete-en-orador">Conviertete en Gayala</a>
+                            <a class="nav-link" href="#patrocinadores">Patrocinadores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#conviertete-en-patrocinador">Conviertete en Patrocinador</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-platzi" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Comprar camisetas</a>
@@ -145,7 +148,8 @@ $rodada =[
         </div>
       </div>
     <!-- modal fin -->
-    <!-- speakers -->
+    <hr>
+    <!-- quien soy -->
     <section id="quien-soy" class="mt-4">
         <div class="container">
             <div class="card mb-3 text-center" style="max-width: 100%;">
@@ -167,7 +171,8 @@ $rodada =[
         </div>
     </section>
     
-    <!-- fin speakers -->
+    <!-- fin quien soy -->
+    <hr>
 <!-- lugar y fecha -->
 
 <section id="ultimas-rodadas">
@@ -180,9 +185,7 @@ $rodada =[
                  <h2><?php echo $rodada[0]['titulo']; ?></h2>
                  <p><abbr title="<?php echo $rodada[0]['abbr'] ?>" data-bs-toggle="tooltip"><?php echo $rodada[0]['tituloabbr'] ?></abbr> El Mamey es prácticamente un rincón escondido de Nayarit, ideal para toda la familia y amigos, en el municipio de San Blas, muy cerca del poblado de Mecatán.
                     Consiste en una serie de piletas y un arroyo de aguas de alto contenido mineral, el cual le da tonalidades de azul y gris a sus corrientes. Cuenta con diferentes secciones: al principio están unas piletas de baja profundidad, en las que se puede caminar para llegar a unas pequeñas cascadas que dan a unos manantiales de mayor profundidad.
-                    El lugar ofrece una pequeña tienda en la que se ofrecen bebidas y diferentes snacks para pasar la tarde.
-                    El Mamey está integrado por varias piletas, las cuales se pueden disfrutar por una módica cuota de acceso para el cuidado del lugar. Los propios pobladores promueven la cultura del cuidado a la naturaleza e invitan a dejar el lugar más limpio de como lo encuentra el visitante.
-                    Para llegar a este destino la vía más rápida es por la nueva autopista Tepic-San Blas, donde se recorren aproximadamente 20 kilómetros hasta llegar a la desviación de Mecatán. En este poblado se pueden encontrar a la venta plátanos, café, aguacate, mango y diversas frutas que abundan en la región.</p>
+                    El lugar ofrece una pequeña tienda en la que se ofrecen bebidas y diferentes snacks para pasar la tarde.</p>
                     <a href="<?php echo $rodada[0][conocemas]; ?>" target="_blank" class="btn btn-outline-light" >Conoce más</a>
             </div>
         </div>
@@ -192,7 +195,7 @@ $rodada =[
              </div>
              <div class="col-12 col-lg-6 pt-2 pb-4 pt-4">
                  <h2><?php echo $rodada[1]['titulo']; ?></h2>
-                 <p><abbr title="<?php echo $rodada[1]['abbr'] ?>" data-bs-toggle="tooltip"><?php echo $rodada[0]['tituloabbr'] ?></abbr> La Presa El Cajón, más formalmente llamada Presa Leonardo Rodríguez Alcaine, es una central hidroeléctrica ubicada
+                 <p><abbr title="<?php echo $rodada[1]['abbr'] ?>" data-bs-toggle="tooltip"><?php echo $rodada[1]['tituloabbr'] ?></abbr> La Presa El Cajón, más formalmente llamada Presa Leonardo Rodríguez Alcaine, es una central hidroeléctrica ubicada
                   en el cauce del Río Grande de Santiago en el municipio de Santa María del Oro, Nayarit. Inició operaciones el 1 de marzo de 2007. Tiene la capacidad de generar 750 megawatts de energía eléctrica. Mide 640 m de largo y 178 m de alto; su 
                   embalse tiene la capacidad de albergar 2,282 hectómetros cúbicos de agua.​ Tuvo un costo aproximado de 800 millones de dólares. La presa es operada por la Comisión Federal de Electricidad.</p>
                     <a href="<?php echo $rodada[1][conocemas]; ?>" target="_blank" class="btn btn-outline-light" >Conoce más</a>
@@ -202,19 +205,61 @@ $rodada =[
 </section>
 
 <!-- fin lugar y fecha -->
-    
+<hr>
+<!-- patorcinadores -->
+<section id="patrocinadores">
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col text-uppercase text-center">
+                <h2>Patrocinadores</h2>
+                <small>Este viaje no seria posible sin ellos<br></small>
+                <small>Gracias !!</small>
+            </div>
+        </div>
+    <div class="row mt-4">
+        <div class="col">
+            <div class="card" style="width: 18rem; margin: 0 auto;">
+                <img src="assets/images/labarra.jpeg" class="card-img-top" alt="...">
+                
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="width: 18rem; margin: 0 auto;">
+                <img src="assets/images/mafalda.jpg" class="card-img-top" alt="...">
+                
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="width: 18rem; margin: 0 auto;">
+                <img src="assets/images/dsijpg.jpg" class="card-img-top" alt="...">
+                
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col">
+            <div class="card" style="width: 18rem; margin: 0 auto;">
+                <img src="assets/images/estacionamiento.jpg" class="card-img-top" alt="...">
+                
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<!-- fin patrocinadores -->
+<hr>    
 <!-- conveirtete en orador -->
-<section id="conviertete-en-orador" class="pt-4 pb-4">
+<section id="conviertete-en-patrocinador" class="pt-4 pb-4">
     <div class="container">
         <div class="row ">
             <div class="col text-uppercase text-center">
                 <small>Conviertete en</small>
-                <h2>Gayala</h2>
+                <h2>Patrocinador</h2>
             </div>
         </div>
         <div class="row">
            <div class="col text-center">
-                Anótate como participante de este <abbr title="Debes tener el apelligo Galindo" data-bs-toggle="tooltip">Gran Proyecto</abbr>. Cuéntanos a donde quieres ir !
+                Envia tus datos y te contactamos !!
             </div>
         </div> 
         <div class="row">
@@ -232,7 +277,7 @@ $rodada =[
                           <div class="form-label col">
                               <textarea name="text" class="form-control form-control-lg" placeholder="Describe el viaje" ></textarea>
                               <small class="form-text text-muted">
-                                  Recuerda incluir porque quieres ir ahí !!
+                                  Recuerda incluir a donde y porque quieres que que vayamos a tu destino !!
                               </small>
                           </div>
                       </div>
@@ -248,6 +293,7 @@ $rodada =[
 </section>
 <!-- fin conviertete -->
 
+<hr>
 <!-- Inicio Footer -->
     <footer id="footer" class="pb-4 pt-4">
         <div class="container">
@@ -272,6 +318,7 @@ $rodada =[
         </div>
     </footer>
 <!-- Fin Footer -->
+<hr>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
