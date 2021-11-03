@@ -1,39 +1,7 @@
 <?php
 
-class Rodada {
-    private $titulo;
-    public $conocemas;
-    public $imagen;
-    public $abbr;
-    public $tituloabbr;
-    public $description;
-    public $visible;
-    public $months;
-
-    public function __constuct($titulo,$description){
-        $this->setTitulo($titulo);
-        $this->description = $description;
-    }
-
-    public function setTitulo($titulo){
-        if ($titulo ==""){
-            $this->titulo="Nimodo";
-        }else{
-            $this->titulo = $titulo;
-        }
-        
-    }
-
-    public function getTitulo(){
-        return $this->titulo;
-    }
-
-    public function getDurationAsString(){
-        $years = floor($this->months/12);
-        $extraMonths = $this->months % 12;
-        return "$years years $extraMonths months";
-    }
-}
+require 'app/Models/Rodada.php';
+require 'app/Models/Patrocinador.php';
 
 $rodada1 = new Rodada('Mecatán 12 - Octubre - 2021 ','https://www.google.com/search?q=mecat%C3%A1n&oq=mecat%C3%A1n&aqs=chrome..69i57j46i512j0i512j69i60l3.7017j0j7&sourceid=chrome&ie=UTF-8');
 
@@ -72,53 +40,24 @@ $rodadas =[
     $rodada1,
     $rodada2,
     $rodada3
-    /* [
-        '' => ,
-        '' => ,
-        '' => ,
-        '' => ,
-        '' => ,
-        '' => ,
-        ''=> true,
-        '' => 1
-    ],
-    [
-        'titulo' => '',
-        'conocemas' => '',
-        'imagen' => '',
-        'abbr' => '',
-        'tituloabbr' => '',
-        'description' => '',
-        'visible'=> true,
-        'months' => 1
-    ],
-    [
-        'titulo' => '',
-        'conocemas' => '',
-        'imagen' => ',
-        'abbr' => '',
-        'tituloabbr' => 'El cajón',
-        'description' => 'La Presa El Cajón, más formalmente llamada Presa Leonardo Rodríguez Alcaine, es una central hidroeléctrica ubicada
-        en el cauce del Río Grande de Santiago en el municipio de Santa María del Oro, Nayarit. Inició operaciones el 1 de marzo de 2007. Tiene la capacidad de generar 750 megawatts de energía eléctrica. Mide 640 m de largo y 178 m de alto; su 
-        embalse tiene la capacidad de albergar 2,282 hectómetros cúbicos de agua.​ Tuvo un costo aproximado de 800 millones de dólares. La presa es operada por la Comisión Federal de Electricidad.',
-        'visible'=> false,
-        'months'=> 3
-    ],
-    [
-        'titulo' => 'La curva',
-        'conocemas' => 'https://www.google.com/search?q=presael+cajon&oq=presael+cajon&aqs=chrome..69i57j0i13l6j0i22i30l3.3194j0j15&sourceid=chrome&ie=UTF-8',
-        'imagen' => 'assets/images/elcajon.jpg',
-        'abbr' => 'más formalmente llamada Presa Leonardo Rodríguez Alcaine',
-        'tituloabbr' => 'El cajón',
-        'description' => 'La Presa El Cajón, más formalmente llamada Presa Leonardo Rodríguez Alcaine, es una central hidroeléctrica ubicada
-        en el cauce del Río Grande de Santiago en el municipio de Santa María del Oro, Nayarit. Inició operaciones el 1 de marzo de 2007. Tiene la capacidad de generar 750 megawatts de energía eléctrica. Mide 640 m de largo y 178 m de alto; su 
-        embalse tiene la capacidad de albergar 2,282 hectómetros cúbicos de agua.​ Tuvo un costo aproximado de 800 millones de dólares. La presa es operada por la Comisión Federal de Electricidad.',
-        'visible'=> false,
-        'months' => 4
-        ]     */ 
 ];
 
+$patrocinador1 = new Patrocinador('assets/images/labarra.jpeg');
 
+$patrocinador2 = new Patrocinador('assets/images/mafalda.jpg');
+
+$patrocinador3 = new Patrocinador('assets/images/dsijpg.jpg');
+
+$patrocinador4 = new Patrocinador('assets/images/estacionamiento.jpg');
+
+
+
+$patrocinadores=[
+    $patrocinador1,
+    $patrocinador2,
+    $patrocinador3,
+    $patrocinador4
+];
 
 function printRodada($rodada){
     if($rodada->visible ==false){
@@ -136,5 +75,15 @@ function printRodada($rodada){
                             <a href="<?php echo $rodada->conocemas ?>" target="_blank" class="btn btn-outline-light" >Conoce más</a>
                 </div>
             </div>
+            <?php
+}
+
+function printPatrocinador($patrocinador){
+    ?>
+        <div class="col">
+            <div class="card" style="width: 18rem; margin: 0 auto;">
+                <img src="<?php echo $patrocinador->imagen ?>" class="card-img-top" alt="...">     
+            </div>
+        </div>
             <?php
 }

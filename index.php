@@ -184,34 +184,16 @@ require_once('rodadas.php');
                 <small>Gracias !!</small>
             </div>
         </div>
-    <div class="row mt-4">
-        <div class="col">
-            <div class="card" style="width: 18rem; margin: 0 auto;">
-                <img src="assets/images/labarra.jpeg" class="card-img-top" alt="...">
-                
-            </div>
+        <div class="row mt-4">
+
+            <?php
+            for ($idx=0;$idx<count($patrocinadores);$idx++){
+                printPatrocinador($patrocinadores[$idx]);
+            }
+            ?>
+            
         </div>
-        <div class="col">
-            <div class="card" style="width: 18rem; margin: 0 auto;">
-                <img src="assets/images/mafalda.jpg" class="card-img-top" alt="...">
-                
-            </div>
-        </div>
-        <div class="col">
-            <div class="card" style="width: 18rem; margin: 0 auto;">
-                <img src="assets/images/dsijpg.jpg" class="card-img-top" alt="...">
-                
-            </div>
-        </div>
-    </div>
-    <div class="row mt-4">
-        <div class="col">
-            <div class="card" style="width: 18rem; margin: 0 auto;">
-                <img src="assets/images/estacionamiento.jpg" class="card-img-top" alt="...">
-                
-            </div>
-        </div>
-    </div>
+    
     </div>
 </section>
 <!-- fin patrocinadores -->
