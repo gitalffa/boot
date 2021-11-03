@@ -1,7 +1,9 @@
 <?php
 
-require 'app/Models/Rodada.php';
-require 'app/Models/Patrocinador.php';
+require_once 'vendor/autoload.php';
+
+use App\Models\{Rodada,Patrocinador,Printable};
+
 
 $rodada1 = new Rodada('Mecatán 12 - Octubre - 2021 ','https://www.google.com/search?q=mecat%C3%A1n&oq=mecat%C3%A1n&aqs=chrome..69i57j46i512j0i512j69i60l3.7017j0j7&sourceid=chrome&ie=UTF-8');
 
@@ -42,13 +44,17 @@ $rodadas =[
     $rodada3
 ];
 
-$patrocinador1 = new Patrocinador('assets/images/labarra.jpeg');
+$patrocinador1 = new Patrocinador('Los Jueves en la barra','Podcast','assets/images/labarra.jpeg');
+$patrocinador1->months =24;
 
-$patrocinador2 = new Patrocinador('assets/images/mafalda.jpg');
+$patrocinador2 = new Patrocinador('Publicaciones Mafalda','Tienda de Revistas','assets/images/mafalda.jpg');
+$patrocinador2->months =14;
 
-$patrocinador3 = new Patrocinador('assets/images/dsijpg.jpg');
+$patrocinador3 = new Patrocinador('DSI','Diseño y Contruccion','assets/images/dsijpg.jpg');
+$patrocinador3->months =18;
 
-$patrocinador4 = new Patrocinador('assets/images/estacionamiento.jpg');
+$patrocinador4 = new Patrocinador('Estacionamiento Gonzalez','Servicio de estacionamiento','assets/images/estacionamiento.jpg');
+$patrocinador4->months =18;
 
 
 
@@ -59,7 +65,7 @@ $patrocinadores=[
     $patrocinador4
 ];
 
-function printRodada($rodada){
+function printRodada(Printable $rodada){
     if($rodada->visible ==false){
         return;
     }
@@ -71,19 +77,24 @@ function printRodada($rodada){
                     <div class="col-12 col-lg-6 pt-2 pb-4 pt-4">
                         <h2><?php echo $rodada->getTitulo(); ?></h2>
                         <h2><?php echo $rodada->getDurationAsString(); ?></h2>
-                        <p><abbr title="<?php echo $rodada->abbr ?>" data-bs-toggle="tooltip"><?php echo $rodada->tituloabbr ?></abbr> <?php echo $rodada->description; ?></p>
+                        <p><abbr title="<?php echo $rodada->abbr ?>" data-bs-toggle="tooltip"><?php echo $rodada->tituloabbr ?></abbr> <?php echo $rodada->getDescription(); ?></p>
                             <a href="<?php echo $rodada->conocemas ?>" target="_blank" class="btn btn-outline-light" >Conoce más</a>
                 </div>
             </div>
-            <?php
+    <?php
 }
 
-function printPatrocinador($patrocinador){
+function printPatrocinador(Printable $patrocinador){
     ?>
         <div class="col">
             <div class="card" style="width: 18rem; margin: 0 auto;">
-                <img src="<?php echo $patrocinador->imagen ?>" class="card-img-top" alt="...">     
+                <img src="<?php echo $patrocinador->imagen ?>" class="card-img-top" alt="...">   
+                <h6> <?php echo $patrocinador->getDurationAsString(); ?></h6> 
+                <div class="alert alert-success" role="alert">
+                    <?php echo $patrocinador->getDescription(); ?>   
+                </div>
+                
             </div>
         </div>
-            <?php
+    <?php
 }

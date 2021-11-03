@@ -1,19 +1,18 @@
 <?php
+namespace App\Models;
+
+
 
 /* calse base para las rodadas */
-class BaseElementRodada {
+class BaseElement implements Printable {
     private $titulo;
-    public $conocemas;
-    public $imagen;
-    public $abbr;
-    public $tituloabbr;
     public $description;
-    public $visible;
     public $months;
+    
 
-    public function __construct($titulo,$conocemas){
+    public function __construct($titulo,$description){
         $this->setTitulo($titulo);
-        $this->conocemas = $conocemas;
+        $this->descripcion = $description;
     }
 
     public function setTitulo($titulo){
@@ -34,16 +33,11 @@ class BaseElementRodada {
         $extraMonths = $this->months % 12;
         return "$years years $extraMonths months";
     }
+
+    public function getDescription(){
+        return $this->description;
+    }
 }
 /* fin clase base para las rodadas */
 
-/* clase base para los patrocinadores */
 
-class BaseElementPatrocinador{
-    public $imagen;
-
-    public function __construct($imagen){
-        $this->imagen = $imagen;
-    }
-}
-/* fin clase base para los patrocinadores */
