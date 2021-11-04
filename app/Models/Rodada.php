@@ -1,16 +1,11 @@
 <?php
 namespace App\Models;
+use Illuminate\Database\Eloquent\Model;
 
 
 
-
-class Rodada extends BaseElement{
-    public $conocemas;
-    public $imagen;
-    public $abbr;
-    public $tituloabbr;
-    public $visible;
-    
+class Rodada extends Model{
+    protected $table = 'rodadas';
 
     public function getDurationAsString(){
         $years = floor($this->months/12);

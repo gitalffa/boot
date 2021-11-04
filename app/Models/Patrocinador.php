@@ -1,13 +1,11 @@
 <?php
 namespace App\Models;
+use Illuminate\Database\Eloquent\Model;
 
 
-class Patrocinador extends BaseElement{
-    public function __construct($titulo,$descripcion,$imagen){
-        $this->imagen = $imagen;
-        $this->description = $descripcion;
-        $this->titulo = $titulo;
-    }
+class Patrocinador extends Model{
+    protected $table = 'patrocinadores';
+    
 
     public function getDurationAsString(){
         $years = floor($this->months/12);

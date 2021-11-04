@@ -1,9 +1,5 @@
 <?php
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 $limitMonths = 3;
 require_once('rodadas.php');
 
@@ -16,7 +12,7 @@ require_once('rodadas.php');
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="../index.css">
     <title>alffaGayala</title>
   </head>
   <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="50">
@@ -26,7 +22,7 @@ require_once('rodadas.php');
         <div class="container">
             
                 <a class="navbar-brand" href="index.php">
-                    <img src="assets/images/alffa-logo.png" alt="Platzi Logo">
+                    <img src="../assets/images/alffa-logo.png" alt="Platzi Logo">
                     Proyecto Jubilatorio
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-bs-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,19 +59,19 @@ require_once('rodadas.php');
         <div id="carousel" class="carousel slide " data-bs-ride="carousel" data-bs-pause=“false”>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="assets/images/fabriyyo.jpg" class="d-block w-100" alt="hawaii 1">
+                    <img src="../assets/images/fabriyyo.jpg" class="d-block w-100" alt="hawaii 1">
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/images/fabriII.jpg" class="d-block w-100" alt="hawaii 3">
+                    <img src="../assets/images/fabriII.jpg" class="d-block w-100" alt="hawaii 3">
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/images/cajon_1.jpg" class="d-block w-100" alt="hawaii 2">
+                    <img src="../assets/images/cajon_1.jpg" class="d-block w-100" alt="hawaii 2">
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/images/fabririosantiago.jpg" class="d-block w-100" alt="hawaii 3">
+                    <img src="../assets/images/fabririosantiago.jpg" class="d-block w-100" alt="hawaii 3">
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/images/alfredo.jpg" class="d-block w-100" alt="hawaii 3">
+                    <img src="../assets/images/alfredo.jpg" class="d-block w-100" alt="hawaii 3">
                 </div>
             </div>
             <div class="overlay carousel-caption ">
@@ -137,7 +133,7 @@ require_once('rodadas.php');
             <div class="card mb-3 text-center" style="max-width: 100%;">
                 <div class="row g-0">
                   <div class="col-md-6">
-                    <img src="assets/images/playa.jpg" class="img-fluid rounded-start" alt="...">
+                    <img src="../assets/images/playa.jpg" class="img-fluid rounded-start" alt="...">
                   </div>
                   <div class="col-md-6">
                     <div class="card-body">
@@ -279,6 +275,6 @@ require_once('rodadas.php');
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     -->
-    <script src="index.js"></script>
+    <script src="../index.js"></script>
 </body>
 </html>
