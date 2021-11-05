@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '3e083f6c336bcd7e7c4769e651ec6d88b4e7ebf0',
+        'reference' => 'a68de349a4b650f14259471108d8885a0386a749',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,16 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '3e083f6c336bcd7e7c4769e651ec6d88b4e7ebf0',
+            'reference' => 'a68de349a4b650f14259471108d8885a0386a749',
+            'dev_requirement' => false,
+        ),
+        'aura/router' => array(
+            'pretty_version' => '3.1.0',
+            'version' => '3.1.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../aura/router',
+            'aliases' => array(),
+            'reference' => '52507bc813c92511dbcacc7463f163ef5149ad38',
             'dev_requirement' => false,
         ),
         'doctrine/inflector' => array(
@@ -144,6 +153,15 @@
             'provided' => array(
                 0 => '1.0',
             ),
+        ),
+        'psr/log' => array(
+            'pretty_version' => '1.1.4',
+            'version' => '1.1.4.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../psr/log',
+            'aliases' => array(),
+            'reference' => 'd49695b909c3b7628b6289db5479a1c204601f11',
+            'dev_requirement' => false,
         ),
         'psr/log-implementation' => array(
             'dev_requirement' => false,
