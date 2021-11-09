@@ -1,43 +1,3 @@
-<?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-require_once 'vendor/autoload.php';
-use Illuminate\Database\Capsule\Manager as Capsule;
-use App\Models\Patrocinador;
-$capsule = new Capsule;
-
-$capsule->addConnection([
-    'driver' => 'mysql',
-    'host' => 'localhost',
-    'database' => 'gayala',
-    'username' => 'root',
-    'password' => 'p@nt@n@l',
-    'charset' => 'utf8',
-    'collation' => 'utf8_unicode_ci',
-    'prefix' => '',
-]);
-
-// Make this Capsule instance available globally via static methods... (optional)
-$capsule->setAsGlobal();
-
-// Setup the Eloquent ORM... (optional; unless you've used setEventDispatcher())
-$capsule->bootEloquent();
-
-if(!empty($_POST)){
-    $patrocinador = new Patrocinador();
-    $patrocinador->titulo =$_POST['titulo'];
-    $patrocinador->descripcion=$_POST['descripcion'];
-    $patrocinador->months=$_POST['months'];
-    $patrocinador->imagen=$_POST['imagen'];
-    
-    $patrocinador->save();
-}
-
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,7 +17,7 @@ if(!empty($_POST)){
 
         </div>
     </div>
-    <form action="addpatrocinador.php" method="POST">
+    <form action="/boot/patrocinadores/add" method="POST">
         <div class="row">
             <div class="col-12 col-md-6">
                 

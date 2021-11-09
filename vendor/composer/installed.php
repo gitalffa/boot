@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'a68de349a4b650f14259471108d8885a0386a749',
+        'reference' => '28578a8bda3522291e97acd6199cf81326a09cb2',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'a68de349a4b650f14259471108d8885a0386a749',
+            'reference' => '28578a8bda3522291e97acd6199cf81326a09cb2',
             'dev_requirement' => false,
         ),
         'aura/router' => array(
@@ -26,6 +26,15 @@
             'install_path' => __DIR__ . '/../aura/router',
             'aliases' => array(),
             'reference' => '52507bc813c92511dbcacc7463f163ef5149ad38',
+            'dev_requirement' => false,
+        ),
+        'components/highlightjs' => array(
+            'pretty_version' => 'v9.16.2',
+            'version' => '9.16.2.0',
+            'type' => 'component',
+            'install_path' => __DIR__ . '/../components/highlightjs',
+            'aliases' => array(),
+            'reference' => '1dea393aa70365843cfec34b1f365930d383bdfe',
             'dev_requirement' => false,
         ),
         'doctrine/inflector' => array(
@@ -291,6 +300,15 @@
             'provided' => array(
                 0 => '2.3',
             ),
+        ),
+        'twig/twig' => array(
+            'pretty_version' => 'v3.3.3',
+            'version' => '3.3.3.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../twig/twig',
+            'aliases' => array(),
+            'reference' => 'a27fa056df8a6384316288ca8b0fa3a35fdeb569',
+            'dev_requirement' => false,
         ),
         'voku/portable-ascii' => array(
             'pretty_version' => '1.5.6',

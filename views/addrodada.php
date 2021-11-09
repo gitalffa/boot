@@ -1,54 +1,3 @@
-<?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-require_once 'vendor/autoload.php';
-use Illuminate\Database\Capsule\Manager as Capsule;
-use App\Models\Rodada;
-$capsule = new Capsule;
-
-$capsule->addConnection([
-    'driver' => 'mysql',
-    'host' => 'localhost',
-    'database' => 'gayala',
-    'username' => 'root',
-    'password' => 'p@nt@n@l',
-    'charset' => 'utf8',
-    'collation' => 'utf8_unicode_ci',
-    'prefix' => '',
-]);
-
-// Make this Capsule instance available globally via static methods... (optional)
-$capsule->setAsGlobal();
-
-// Setup the Eloquent ORM... (optional; unless you've used setEventDispatcher())
-$capsule->bootEloquent();
-
-if(!empty($_POST)){
-    $rodada = new Rodada();
-    $rodada->titulo =$_POST['titulo'];
-    $rodada->descripcion=$_POST['descripcion'];
-    $rodada->months=$_POST['months'];
-    $rodada->conocemas=$_POST['conocemas'];
-    $rodada->imagen=$_POST['imagen'];
-    $rodada->abbr=$_POST['abbr'];
-    $rodada->tituloabbr=$_POST['tituloabbr'];
-    $rodada->visible=$_POST['visible'];
-
-
-    if($_POST['visible']=="true"){
-        $rodada->visible=true;
-    }else{
-        $rodada->visible=0;
-    }
-    
-    $rodada->save();
-}
-
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,7 +17,7 @@ if(!empty($_POST)){
 
         </div>
     </div>
-    <form action="addrodada.php" method="POST">
+    <form action="/boot/rodadas/add" method="POST">
         <div class="row">
             <div class="col-12 col-md-6">
                 
@@ -121,7 +70,7 @@ if(!empty($_POST)){
             <div class="col-12 col-md-6">
                 
                     <label for="tituloAbbr" class="form-label" >Titulo Abbr</label>
-                    <input type="text" name="tituloAbbr" class="form-control" id="tituloAbbr" placeholder="titulo Abbr" aria-describedby="tituloAbbrHelp">
+                    <input type="text" name="tituloabbr" class="form-control" id="tituloAbbr" placeholder="titulo Abbr" aria-describedby="tituloAbbrHelp">
                     <div id="tituloAbbrlHelp" class="form-text">Teclea el titulo del Abbr.</div>
                  
             </div>
