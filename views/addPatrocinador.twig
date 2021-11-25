@@ -1,0 +1,76 @@
+{% extends "layoutcaptura.twig" %}
+
+{% block content %}
+<div class="container">
+    <h1>Add Patrocinador</h1>
+    <form action="/boot/patrocinadores/add" method="POST" class="row needs-validation" novalidate>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                    <label for="titulo" class="form-label" >Titulo</label>
+                    <input type="text" name="titulo" class="form-control" id="titulo" placeholder="Titulo del patrocinador" aria-describedby="tituloHelp" required>
+                    <div id="titulolHelp" class="form-text">Teclea el titulo del patrocinador.</div>
+                    <div class="valid-feedback">
+                        Se ve muy bien!
+                    </div>
+                    <div class="alert {{ alertTipoTitulo }}" role="alert">
+                        {{responseMessageTitulo}}
+                    </div>
+            </div>
+            <div class="col-12 col-md-6">
+                
+                    <label for="descripcion" class="form-label">Descripcion</label>
+                    <input id="descripcion" name="descripcion" class="form-control " placeholder="Describe a la empresa" required>
+                    <div id="descripcionHelp" class="form-text">Teclea una descripcion de la empresa.</div>
+                    <div class="invalid-feedback">
+                        Es importante poner una descripción :-).
+                    </div>
+                    <div class="valid-feedback">
+                        Se ve muy bien!
+                    </div>
+                    <div class="alert {{ alertTipoDescripcion }}" role="alert">
+                        {{responseMessageDescripcion}}
+                    </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                
+                    <label for="months" class="form-label" >Meses</label>
+                    <input type="date" name="months" class="form-control" id="months" placeholder="months" aria-describedby="monthsHelp" required>
+                    <div id="monthslHelp" class="form-text">Teclea desde cuando es tu patrocinador.</div>
+                    <div class="invalid-feedback">
+                        Tienes que poner la fecha de la rodada.
+                    </div>
+                    <div class="valid-feedback">
+                        Se ve muy bien!
+                    </div>
+                    <div class="alert {{ alertTipoFecha }}" role="alert">
+                        {{responseMessageFecha}}
+                    </div>
+                 
+            </div>
+            <div class="col-12 col-md-6">
+                
+            <label for="imagen" class="form-label" >Imagen</label>
+                    <input type="text" name="imagen" class="form-control" id="imagen" placeholder="imagen" aria-describedby="imagenHelp" required>
+                    <div id="imagenlHelp" class="form-text">Teclea la URL de la imagen.</div>
+                    <div class="invalid-feedback">
+                        Tienes que subir el logo del patrocinador.
+                    </div>
+                    <div class="valid-feedback">
+                        muy bien, gracias!
+                    </div>
+                    <div class="alert {{ alertTipoFecha }}" role="alert">
+                        {{responseMessageImagen}}
+                    </div>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="submit" class="btn btn-platzi btn-block">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

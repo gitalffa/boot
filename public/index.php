@@ -5,18 +5,27 @@ error_reporting(E_ALL);
 
 require_once '../vendor/autoload.php';
 
+session_start();
+
+$dotenv = Dotenv\Dotenv :: createUnsafeImmutable(__DIR__ . '/..');
+$dotenv->load();
+
+
+
+
 use Illuminate\Database\Capsule\Manager as Capsule;
 use Aura\Router\RouterContainer;
+
 
 
 $capsule = new Capsule;
 
 $capsule->addConnection([
     'driver' => 'mysql',
-    'host' => 'localhost',
-    'database' => 'gayala',
-    'username' => 'root',
-    'password' => 'p@nt@n@l',
+    'host' => getenv('DB_HOST'),
+    'database' => getenv('DB_NAME'),
+    'username' => getenv('DB_USER'),
+    'password' => getenv('DB_PASS'),
     'charset' => 'utf8',
     'collation' => 'utf8_unicode_ci',
     'prefix' => '',
@@ -44,7 +53,8 @@ $map->get('index','/boot/',[
 ]);
 $map->get('addRodadas','/boot/rodadas/add',[
     'controller' => 'App\Controllers\RodadasController',
-    'action'=> 'getAddRodadasController'
+    'action'=> 'getAddRodadasController',
+    'auth'=> true
 ]);
 $map->post('saveRodadas','/boot/rodadas/add',[
     'controller' => 'App\Controllers\RodadasController',
@@ -52,49 +62,46 @@ $map->post('saveRodadas','/boot/rodadas/add',[
 ]);
 $map->get('addPatrocinadores','/boot/patrocinadores/add',[
     'controller' => 'App\Controllers\PatrocinadoresController',
-    'action'=> 'getAddPatrocinadoresController'
+    'action'=> 'getAddPatrocinadoresController',
+    'auth'=> true
 ]);
 $map->post('savePatrocinadores','/boot/patrocinadores/add',[
     'controller' => 'App\Controllers\PatrocinadoresController',
-    'action'=> 'getAddPatrocinadoresController'
+    'action'=> 'getAddPatrocinadoresController',
+    'auth'=> true
+]);
+$map->get('addUser','/boot/users/add',[
+    'controller' => 'App\Controllers\UsersController',
+    'action'=> 'getAddUsersController',
+    'auth'=> true
+]);
+$map->post('saveUsers','/boot/users/add',[
+    'controller' => 'App\Controllers\UsersController',
+    'action'=> 'getAddUsersController',
+    'auth'=> true
+]);
+$map->get('loginForm','/boot/login',[
+    'controller' => 'App\Controllers\AuthController',
+    'action'=> 'getLogin'
+]);
+$map->post('auth','/boot/auth',[
+    'controller' => 'App\Controllers\AuthController',
+    'action'=> 'postLogin'
+]);
+$map->get('admin','/boot/admin',[
+    'controller' => 'App\Controllers\AdminController',
+    'action'=> 'getIndex',
+    'auth'=> true
+]);
+$map->get('logout','/boot/logout',[
+    'controller' => 'App\Controllers\AuthController',
+    'action'=> 'getLogout'
 ]);
 
 $matcher = $routerContainer->getMatcher();
 $route = $matcher->match($request);
 
-function printRodada( $rodada){
-    /*     if($rodada->visible ==false){
-            return;
-        } */
-        ?>
-                <div class="row">
-                    <div class="col-12 col-lg-6 pe-0 ps-0">
-                            <img src="<?php echo $rodada->imagen ?>" alt="<?php echo $rodada->tituloabbr ?>">
-                        </div>
-                        <div class="col-12 col-lg-6 pt-2 pb-4 pt-4">
-                            <h2><?php echo $rodada->titulo; ?></h2>
-                            <h2><?php echo $rodada->getDurationAsString(); ?></h2>
-                            <p><abbr title="<?php echo $rodada->abbr ?>" data-bs-toggle="tooltip"><?php echo $rodada->tituloabbr ?></abbr> <?php echo $rodada->descripcion; ?></p>
-                                <a href="<?php echo $rodada->conocemas ?>" target="_blank" class="btn btn-outline-light" >Conoce más</a>
-                    </div>
-                </div>
-        <?php
-    }
 
-    function printPatrocinador( $patrocinador){
-        ?>
-            <div class="col">
-                <div class="card" style="width: 18rem; margin: 0 auto;">
-                    <img src="<?php echo $patrocinador->imagen ?>" class="card-img-top" alt="...">   
-                    <h6> <?php echo $patrocinador->getDurationAsString(); ?></h6> 
-                    <div class="alert alert-success" role="alert">
-                        <?php echo $patrocinador->descripcion; ?>   
-                    </div>
-                    
-                </div>
-            </div>
-        <?php
-    }
 
 if(!$route){
     echo "No route";
@@ -102,9 +109,22 @@ if(!$route){
     $handlerData=$route->handler;
     $controllerName = $handlerData['controller'];
     $actionName =$handlerData['action'];
-    $controller = new $controllerName;
-    $controller->$actionName($request);
+    $needsAuth =$handlerData['auth'] ?? false;
 
+    $sessionUserId=$_SESSION['userId'] ?? null;
+    if($needsAuth && !$sessionUserId){
+        $controllerName='App\Controllers\AuthController';
+        $actionName = 'getLogout';
+    }
+    $controller = new $controllerName;
+    $response = $controller->$actionName($request);
+    foreach($response->getHeaders() as $name => $value){
+        foreach($value as $value){
+            header(sprintf('%s: %s',$name,$value),false);
+        }
+    }
+    http_response_code($response->getStatusCode());
+    echo $response->getBody();
 }
 
 

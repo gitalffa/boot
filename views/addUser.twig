@@ -1,0 +1,43 @@
+{% extends "layoutcaptura.twig" %}
+
+{% block content %}
+<div class="container">
+<h1>Add User</h1>
+<form action="/boot/users/add" method="POST" class="row needs-validation" novalidate>
+    <div class="row">
+        <div class="col-12 col-md-3">
+            <label for="email" class="form-label" >User</label>
+            <input type="email" name="user" class="form-control" id="email" placeholder="tuEmail@gmail.com" aria-describedby="UserHelp" required>
+            <div id="UserHelp" class="form-text">Teclea tu User</div>
+                <div class="valid-feedback">
+                        Se ve muy bien!
+                </div>
+                <div class="alert {{ alertTipoUser }}" role="alert">
+                        {{responseMessageUser}}
+                </div>
+        </div>
+        <div class="col-12 col-md-3">
+            <label for="password" class="form-label" >Password</label>
+            <input type="password" name="password" class="form-control" id="password" placeholder="*********" aria-describedby="PasswordHelp" required>
+            <div id="PasswordHelp" class="form-text">Teclea tu password</div>
+                <div class="alert {{ alertTipoPasswordNoWhite }}" role="alert">
+                        {{responseMessagePasswordNoWhite}}
+                </div>
+        </div>
+        <div class="col-12 col-md-3">
+            <label for="passwordConf" class="form-label" >Password Conf</label>
+            <input type="password" name="passwordConf" class="form-control" id="passwordConf" placeholder="*********" aria-describedby="PasswordConfHelp" required>
+            <div id="PassworConfdHelp" class="form-text">Confirma tu password</div>
+                <div class="alert {{ alertTipoPasswordNoWhite }}" role="alert">
+                        {{responseMessagePasswordNoWhite}}
+                </div>
+        </div>
+    </div>
+    <div class="row">
+            <div class="col">
+                <button type="submit" class="btn btn-platzi btn-block">Submit</button>
+            </div>
+    </div>
+</form>
+</div>
+{% endblock %}

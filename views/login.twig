@@ -1,0 +1,26 @@
+{% extends "layoutcaptura.twig" %}
+
+{% block content %}
+<div class="container">
+<h1>Login</h1>
+<div class="alert alert-primary" role="alert">
+    {{responseMessage}}
+</div>
+<form action="/boot/auth" method="POST">
+<div class="row">
+    <div class="col-12 col-md-10 ">
+         <label for="email" class="form-label" >Email</label>
+        <input type="text" name="email">
+    </div>
+    <div class="col-12 col-md-10 ">
+         <label for="password" class="form-label" >User  </label>
+        <input type="password" name="password">
+    </div>
+    <div class="col-12 col-md-3">
+        <button type="submit">Login</button>
+    </div>
+</div>
+</form>
+</div>
+
+{% endblock %}

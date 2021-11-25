@@ -3,11 +3,14 @@
 namespace App\Controllers;
 use App\Models\{Rodada,Patrocinador};
 
-class IndexController{
+class IndexController extends BaseController{
     public function indexAction(){
         $limitMonths = 10;
         $rodadas = Rodada::all();
         $patrocinadores = Patrocinador::all();
-        include '../views/index.php';
+        return $this->renderHTML('index.twig',[
+            'rodadas' => $rodadas,
+            'patrocinadores' => $patrocinadores
+        ]);
     }
 }

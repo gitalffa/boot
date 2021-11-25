@@ -1,0 +1,131 @@
+{% extends "layoutcaptura.twig" %}
+
+{% block content %}
+<div class="container">
+    <h1>Add Rodada</h1>
+    <div class="row">
+        
+    </div>
+    <form action="/boot/rodadas/add" method="POST" class="row g-3 needs-validation" novalidate enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                
+                    <label for="titulo" class="form-label" >Titulo</label>
+                    <input type="text" name="titulo" class="form-control" id="titulo" placeholder="Titulo del viaje" aria-describedby="tituloHelp" required>
+                    <div id="titulolHelp" class="form-text">Teclea el titulo que le daras a la rodada.</div>
+                    <div class="invalid-feedback">
+                        Por favor teclea el Titulo de tu POST.
+                    </div>
+                    <div class="valid-feedback">
+                        Se ve muy bien!
+                    </div>
+                    <div class="alert {{ alertTipoTitulo }}" role="alert">
+                        {{responseMessageTitulo}}
+                    </div>
+                                
+            </div>
+            <div class="col-12 col-md-6">
+                
+                    <label for="descripcion" class="form-label">Descripcion</label>
+                    <textarea id="descripcion" name="descripcion" class="form-control form-control-lg" placeholder="Describe el viaje" required></textarea>
+                    <div id="descripcionHelp" class="form-text">Teclea Una descripcion extensa.</div>
+                    <div class="invalid-feedback">
+                        Es importante poner una descripción :-).
+                    </div>
+                    <div class="valid-feedback">
+                        Se ve muy bien!
+                    </div>
+                    <div class="alert {{ alertTipoDescripcion }}" role="alert">
+                        {{responseMessageDescripcion}}
+                    </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                
+                    <label for="months" class="form-label" >Meses</label>
+                    <input type="date" name="months" class="form-control" id="months" placeholder="months" aria-describedby="monthsHelp" required>
+                    <div id="monthslHelp" class="form-text">Selecciona la fecha de la rodada.</div>
+                    <div class="invalid-feedback">
+                        Tienes que poner la fecha de la rodada.
+                    </div>
+                    <div class="valid-feedback">
+                        Se ve muy bien!
+                    </div>
+                    <div class="alert {{ alertTipoFecha }}" role="alert">
+                        {{responseMessageFecha}}
+                    </div>
+                 
+            </div>
+            <div class="col-12 col-md-6">
+                
+                    <label for="conocemas" class="form-label">conocemas</label>
+                    <input id="conocemas" name="conocemas" class="form-control " placeholder="URL valida" >
+                    <div id="conocemasHelp" class="form-text">Teclea una URL valida.</div>
+                    <div class="valid-feedback">
+                        si no pones nada esta bien ... no te preocupes :-)
+                    </div>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                
+                    <label for="imagen" class="form-label" >Imagen</label>
+                    <input type="file" name="imagen" class="form-control" id="imagen" placeholder="imagen" aria-describedby="imagenHelp" required>
+                    <div id="imagenlHelp" class="form-text">Teclea hace cuantos meses fue la rodada.</div>
+                    <div class="invalid-feedback">
+                        Tienes que subir una imagen de la rodada.
+                    </div>
+                    <div class="valid-feedback">
+                        Hermosa foto, gracias!
+                    </div>
+                     <div class="alert {{ alertTipoImagen }}" role="alert">
+                        {{responseMessageImagen}}
+                    </div>
+                 
+            </div>
+            <div class="col-12 col-md-6">
+                
+                    <label for="abbr" class="form-label">abbr</label>
+                    <input id="abbr" name="abbr" class="form-control " placeholder="Descripcion pequeña" >
+                    <div id="abbrHelp" class="form-text">Teclea una descricion pequeña del inicio de tu texto.</div>
+                    <div class="valid-feedback">
+                        si no pones nada esta bien ... no te preocupes :-)
+                    </div>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                
+                    <label for="tituloAbbr" class="form-label" >Titulo Abbr</label>
+                    <input type="text" name="tituloabbr" class="form-control" id="tituloAbbr" placeholder="titulo Abbr" aria-describedby="tituloAbbrHelp" required>
+                    <div id="tituloAbbrlHelp" class="form-text">Teclea el titulo del Abbr.</div>
+                    <div class="invalid-feedback">
+                        Tienes que poner un titulo para el abbr.
+                    </div>
+                    <div class="valid-feedback">
+                        Se ve muy bien!
+                    </div>
+                 
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <input name="visible" value="true" class="form-check-input" type="checkbox" id="inlineFormCheck" checked>
+                    <label class="form-check-label" for="inlineFormCheck">
+                        Visible
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="row">
+            <div class="col">
+                <button type="submit" class="btn btn-platzi btn-block">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

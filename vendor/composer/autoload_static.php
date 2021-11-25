@@ -16,8 +16,10 @@ class ComposerStaticInita21ead8cee19ee8b849ee0932d67cd98
         '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         '60799491728b879e74601d83e38b2cad' => __DIR__ . '/..' . '/illuminate/collections/helpers.php',
+        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
         '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
+        '2df68f9e79c919e2d88506611769ed2e' => __DIR__ . '/..' . '/respect/stringifier/src/stringify.php',
         '07d7f1a47144818725fd8d91a907ac57' => __DIR__ . '/..' . '/laminas/laminas-diactoros/src/functions/create_uploaded_file.php',
         'da94ac5d3ca7d2dbab84ce561ce72bfd' => __DIR__ . '/..' . '/laminas/laminas-diactoros/src/functions/marshal_headers_from_sapi.php',
         '3d97c8dcdfba8cb85d3b34f116bb248b' => __DIR__ . '/..' . '/laminas/laminas-diactoros/src/functions/marshal_method_from_sapi.php',
@@ -59,26 +61,42 @@ class ComposerStaticInita21ead8cee19ee8b849ee0932d67cd98
             'Symfony\\Component\\String\\' => 25,
             'Symfony\\Component\\Console\\' => 26,
         ),
+        'R' => 
+        array (
+            'Respect\\Validation\\' => 19,
+            'Respect\\Stringifier\\' => 20,
+        ),
         'P' => 
         array (
             'Psr\\SimpleCache\\' => 16,
             'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Container\\' => 14,
+            'PhpOption\\' => 10,
         ),
         'L' => 
         array (
+            'League\\MimeTypeDetection\\' => 25,
+            'League\\Glide\\' => 13,
+            'League\\Flysystem\\' => 17,
             'Laminas\\Diactoros\\' => 18,
         ),
         'I' => 
         array (
+            'Intervention\\Image\\' => 19,
             'Illuminate\\Support\\' => 19,
             'Illuminate\\Database\\' => 20,
             'Illuminate\\Contracts\\' => 21,
             'Illuminate\\Container\\' => 21,
         ),
+        'G' => 
+        array (
+            'GuzzleHttp\\Psr7\\' => 16,
+            'GrahamCampbell\\ResultType\\' => 26,
+        ),
         'D' => 
         array (
+            'Dotenv\\' => 7,
             'Doctrine\\Inflector\\' => 19,
         ),
         'C' => 
@@ -145,6 +163,14 @@ class ComposerStaticInita21ead8cee19ee8b849ee0932d67cd98
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
+        'Respect\\Validation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/respect/validation/library',
+        ),
+        'Respect\\Stringifier\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/respect/stringifier/src',
+        ),
         'Psr\\SimpleCache\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/simple-cache/src',
@@ -162,9 +188,29 @@ class ComposerStaticInita21ead8cee19ee8b849ee0932d67cd98
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
         ),
+        'PhpOption\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
+        ),
+        'League\\MimeTypeDetection\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/league/mime-type-detection/src',
+        ),
+        'League\\Glide\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/league/glide/src',
+        ),
+        'League\\Flysystem\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/league/flysystem/src',
+        ),
         'Laminas\\Diactoros\\' => 
         array (
             0 => __DIR__ . '/..' . '/laminas/laminas-diactoros/src',
+        ),
+        'Intervention\\Image\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image',
         ),
         'Illuminate\\Support\\' => 
         array (
@@ -183,6 +229,18 @@ class ComposerStaticInita21ead8cee19ee8b849ee0932d67cd98
         'Illuminate\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/illuminate/container',
+        ),
+        'GuzzleHttp\\Psr7\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
+        ),
+        'GrahamCampbell\\ResultType\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/graham-campbell/result-type/src',
+        ),
+        'Dotenv\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/vlucas/phpdotenv/src',
         ),
         'Doctrine\\Inflector\\' => 
         array (
