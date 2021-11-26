@@ -1,22 +1,32 @@
 {% extends "layoutcaptura.twig" %}
 
 {% block content %}
-<h1>Dash Board</h1>
-<ul class="nav">
-  <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="/boot/rodadas/add">Alta Rodada</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="/boot/patrocinadores/add">Alta Patrocinadores</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="/boot/users/add">Alta Usuarios</a>
-  </li>
-  
-</ul>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Dash Board</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Blog</h6>
+    <p class="card-text">CRUD para el Blog motero Gayala.</p>
+    <a href="/boot/rodadas/add" class="card-link">Alta Rodada</a>
+    <a href="/boot/patrocinadores/add" class="card-link">Alta Patrocinadores</a>
+    <a href="/boot/users/add" class="card-link">Alta Usuarios</a>
+    <a href="/boot/" class="card-link">Ir al Blog</a>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Dash Board</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Curriculum Vitae</h6>
+    <p class="card-text">CRUD para el CV de Fabricio Galindo.</p>
+    <a href="/boot/jobs/add" class="card-link">Alta Trabajos</a>
+    <a href="/boot/projects/add" class="card-link">Alta Proyectos</a>
+    <a href="/boot/blog" class="card-link">Ir al CV</a>
+  </div>
+</div>
 
 <li class="nav-item">
     <a class="nav-link" href="/boot/logout">Logout</a>
 </li>
+
+
 
 {% endblock %}

@@ -51,6 +51,10 @@ $map->get('index','/boot/',[
     'controller'=>'App\Controllers\IndexController',
     'action'=>'indexAction'
 ]);
+$map->get('blog','/boot/blog',[
+    'controller'=>'App\Controllers\BlogController',
+    'action'=>'blogAction'
+]);
 $map->get('addRodadas','/boot/rodadas/add',[
     'controller' => 'App\Controllers\RodadasController',
     'action'=> 'getAddRodadasController',
@@ -97,6 +101,27 @@ $map->get('logout','/boot/logout',[
     'controller' => 'App\Controllers\AuthController',
     'action'=> 'getLogout'
 ]);
+$map->post('saveJobs', '/boot/jobs/add',[
+    'controller' => 'App\Controllers\JobsController',
+    'action' => 'getAddJobAction',
+    'auth' => true
+]);
+
+$map->post('saveProject', '/boot/projects/add',[
+    'controller' => 'App\Controllers\ProjectsController',
+    'action' => 'getAddProjectAction',
+    'auth' => true
+]);
+$map->get('addJobs', '/boot/jobs/add',[
+    'controller' => 'App\Controllers\JobsController',
+    'action' => 'getAddJobAction',
+    'auth' => true
+]);
+$map->get('addProjects', '/boot/projects/add',[
+    'controller' => 'App\Controllers\ProjectsController',
+    'action' => 'getAddProjectAction',
+    'auth' => true
+]);
 
 $matcher = $routerContainer->getMatcher();
 $route = $matcher->match($request);
@@ -114,7 +139,7 @@ if(!$route){
     $sessionUserId=$_SESSION['userId'] ?? null;
     if($needsAuth && !$sessionUserId){
         $controllerName='App\Controllers\AuthController';
-        $actionName = 'getLogout';
+        $actionName = 'getProtected';
     }
     $controller = new $controllerName;
     $response = $controller->$actionName($request);

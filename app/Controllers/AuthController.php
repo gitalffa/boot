@@ -34,4 +34,12 @@ class AuthController extends BaseController{
         unset($_SESSION['userId']);
         return new RedirectResponse('/boot/login');
     }
+    public function getProtected(){
+        unset($_SESSION['userId']);
+        $responseMessage = 'Protected Route';
+        return $this->renderHTML('login.twig',[
+            'responseMessage'=>$responseMessage
+        ]);
+
+    }
 }
