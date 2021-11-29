@@ -18,7 +18,7 @@ class BlogController extends BaseController{
         return $this->renderHTML('blog.twig',[
             'name'=>$name,
             'jobs'=>$jobs,
-            'prjects'=>$projects
+            'projects'=>$projects
         ]);
         
     }
